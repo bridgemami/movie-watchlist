@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Michael Bridgeman" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/favicon_io/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon_io/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/favicon_io/android-chrome-192x192.png"
+    />
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Movie Watchlist</title>
+  </head>
+  <body>
+    <header>
+      <h1>Find your film</h1>
+      <nav>
+        <a href="./watchlist.html" class="nav-bar">My Watchlist</a>
+      </nav>
+    </header>
+    <div class="black-background"></div>
+    <main>
+      <form id="form">
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass magnifying-glass"></i>
+          <input
+            type="text"
+            name="film-search"
+            placeholder="Search for a movie"
+            class="search-text"
+            id="film-search"
+          />
+        </div>
+        <button class="search-btn">Search</button>
+      </form>
+      <section class="exploring" id="exploring">
+        <i class="fa-solid fa-film film"></i>
+        <h5>Start exploring</h5>
+      </section>
+      <section id="search-results" class="search-results"></section>
+    </main>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

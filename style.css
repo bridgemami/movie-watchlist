@@ -1,0 +1,187 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    color: snow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    background: url('./assets/andre-tan-THJJRUhNlEc-unsplash.jpg');
+    background-position: 25% 25%;
+    background-size: cover;
+}
+
+ .black-background {
+    height: 25vh;
+    background: #0E0E0E;
+    width: 100%;
+    opacity: 80%;
+    display: inline;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+h1, nav {
+    z-index: 2;
+}
+
+nav {
+    margin-top: 1em;
+}
+
+.nav-bar {
+    text-decoration: none;
+    color: snow;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+}
+
+form {
+    border: 1px solid #D1D5DB;
+    width: 80%;
+    margin: -1em auto 0 auto;
+    padding-left: .5em;
+    border-radius: 3%;
+    display: flex;
+    position: relative;
+    background-color: snow;
+}
+
+.search-container{
+    width:67%;
+    align-self: center;
+}
+
+.magnifying-glass {
+    font-size: .75rem;
+}
+
+.search-text {
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    /* padding-left: .25em; */
+}
+
+.search-btn {
+    background:#F9FAFB;
+    cursor: pointer;
+    padding: .5em 1em;
+    border: none;
+    border-left: 1px solid #D1D5DB;
+    width: 33%;
+    text-align: center;
+}
+
+.exploring, .empty-watchlist {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;   
+height: 100%; 
+color: #DFDDDD;
+font-weight: bold;
+}
+
+.exploring > i {
+    color: #DFDDDD; 
+    font-size: 3rem; 
+}
+
+.empty-watchlist > i {
+    color:#0E0E0E;
+    font-size: 2rem;
+}
+
+
+.empty-watchlist > a, .empty-watchlist > a:visited{
+    color:#0E0E0E;
+    padding-top: 1em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+
+.film {
+    color:black;    
+}
+
+.search-results {
+    display: flex;
+    height: 100%; 
+    flex-direction: column;
+}
+.film-details {
+    display: flex;
+    padding: 1em 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #D3d3d3 solid 1px;
+    margin: 0 1em;
+}
+
+.film-details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.star {
+    color: yellow; 
+}
+
+.film-poster {
+width: 90%;
+padding-bottom: .5em;
+}
+
+.film-title {
+    align-self: center;
+}
+
+.middle-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+.plot {
+    line-height: 1.25em;
+    color: #6B7280;
+}
+
+.film-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 0 1em 0;
+}
+
+.watchlist {
+    cursor: pointer;
+    padding-left: .1em;
+}
+@media(min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .search-text {
+width: 97%;
+    }
+}
