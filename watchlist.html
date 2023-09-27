@@ -43,6 +43,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>My Watchlist</title>
   </head>
@@ -55,17 +62,9 @@
     </header>
     <div class="black-background"></div>
     <main>
-      <section class="empty-watchlist" id="empty-watchlist">
-        <p>Your watchlist is looking a little empty...</p>
-        <a href="./index.html" class="blank-list">
-          <div class="blank-list">
-            <i class="fa-solid fa-circle-plus"></i>
-            <span>Let's add some movies!</span>
-          </div>
-        </a>
+      <section class="watchlist" id="watchlist">
       </section>
-      <section id="search-results" class="search-results"></section>
     </main>
-    <script src="script.js" type="module"></script>
+    <script src="watchlist.js" type="module"></script>
   </body>
 </html>

@@ -66,13 +66,14 @@ form {
 
 .magnifying-glass {
     font-size: .75rem;
+    padding-right: .1em;
 }
 
 .search-text {
     border: none;
     cursor: pointer;
     width: 90%;
-    /* padding-left: .25em; */
+    padding: .1em 0 .1em .5em;
 }
 
 .search-btn {
@@ -85,7 +86,7 @@ form {
     text-align: center;
 }
 
-.exploring, .empty-watchlist {
+.exploring {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -95,21 +96,47 @@ color: #DFDDDD;
 font-weight: bold;
 }
 
+.exploring {
+    color: #DFDDDD;
+}
+
 .exploring > i {
     color: #DFDDDD; 
     font-size: 3rem; 
 }
 
-.empty-watchlist > i {
+.watchlist {
+    padding-left: .1em;
     color:#0E0E0E;
-    font-size: 2rem;
+}
+
+.no-results {
+    color: black;
+    text-align: center;
+    padding-top: 2em;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.empty-list-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 75vh;
+    padding: 3em;
+}
+
+.watchlist > i, .empty-list-container > i, .icon {
+    color:#0E0E0E;
+    /* font-size: 2rem; */
+    cursor: pointer;
 }
 
 
-.empty-watchlist > a, .empty-watchlist > a:visited{
+.watchlist > a, .watchlist > a:visited, .empty-list-container >a, .empty-list-container >a:visited{
     color:#0E0E0E;
     padding-top: 1em;
-    cursor: pointer;
     text-decoration: none;
 }
 
@@ -117,11 +144,15 @@ font-weight: bold;
     display: none;
 }
 
+.show {
+    display: flex;
+}
+
 .film {
     color:black;    
 }
 
-.search-results {
+.search-results, .film-list {
     display: flex;
     height: 100%; 
     flex-direction: column;
@@ -172,16 +203,54 @@ padding-bottom: .5em;
     padding: .5em 0 1em 0;
 }
 
-.watchlist {
-    cursor: pointer;
-    padding-left: .1em;
-}
 @media(min-width: 768px) {
     header {
         flex-direction: row;
         justify-content: space-around;
     }
-    .search-text {
-width: 97%;
+
+    nav {
+        margin: 0;
+    }
+    form { 
+        width: 40%;
+    }
+
+    .black-background, header {
+        height: 20vh;
+    }
+
+    .watchlist {
+        display: flex;
+    }
+    .search-results, .watchlist {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .film-details {
+        flex-direction: row;
+        border: none;
+        width: 50%;
+        margin: 0;
+        padding-left: 1em;
+        padding-right: 1em;
+
+    }
+    .film-details-container{
+        /* width: 40%;  */
+        padding-left: 1em;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .film-poster {
+       width: 25%;
+    }
+}
+@media(min-width: 1024px) {
+    .film-details {
+        width: 33%;
+}
+    .watchlist {
+        justify-content: center;
     }
 }
