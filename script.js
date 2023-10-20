@@ -19,21 +19,20 @@ async function displaySearchResults(searchResults) {
 
   const filteringIds = watchlistArr.includes(searchResults);
   if (filteringIds) {
-      return "Already in Watchlist";
+     return renderMovieAsInWatchlist(searchResults);
   } else {
       return renderMovieAsNotInWatchlist(searchResults);
   }
 }
 
 function renderMovieAsInWatchlist(movie) {
-  return `<div id="${movie}">
-      <p data-addimdbid="${movie}" class="icon">Already in Watchlist</p>
-  </div>`;
+  return `<p data-addimdbid="${movie}" class="icon">Already in Watchlist</p>`;
 }
 
 function renderMovieAsNotInWatchlist(movie) {
-  console.log(movie);
-  return addFilmWatchlist;
+  return `<i class="fa-solid fa-circle-plus icon" data-addimdbid="${
+    movie}"> <span class="inner-icon">Add to Watchlist</span></i>
+    `
 }
 
 function getFromLocalStorage(key) {
@@ -56,28 +55,30 @@ function addFilmWatchlist() {
           `${e.target.parentElement.id}`
         ).firstChild.nextSibling;
         const imdbId = e.target.dataset.addimdbid;
-          //already in watchlist
-        // if (watchlistArr.some((movie) => movie.imdbID === imdbId)) {
-        //   watchlistEl.classList.remove("fa-solid", "fa-circle-plus");
-        //   watchlistEl.innerHTML = "<span>Already in Watchlist</span>";
-        //   console.log("Movie is already in watchlist");
-        //   return;
-        // }
-
+      
         watchlistEl.classList.remove("fa-solid", "fa-circle-plus");
         watchlistEl.innerHTML = "<span>Added to Watchlist</span>";
-        const moviesArr = getFromLocalStorage("movies");
-        if (moviesArr && moviesArr.length > 0) {
-        const targetMovie = moviesArr.find((movie) => movie.imdbID === imdbId);
-        if (!targetMovie) {
-          console.log("Could not find target movie in moviesArr");
-          return;
-        }
-        watchlistArr.push(targetMovie);
-        localStorage.setItem("watchlist", JSON.stringify(watchlistArr));
-      }}
-    });
-}
+      //   const moviesArr = getFromLocalStorage("movies");
+      //   console.log(moviesArr)
+      //   if (moviesArr && moviesArr.length > 0) {
+      //   const targetMovie = moviesArr.find((movie) => movie.imdbID === imdbId);
+      //   watchlistArr.push(targetMovie);
+      //   localStorage.setItem("watchlist", JSON.stringify(watchlistArr))
+      // }
+      //  else (!targetMovie) 
+      //     console.log("Could not find target movie in moviesArr");
+      //     return;
+      const moviesArr = getFromLocalStorage("movies")[0];
+      const targetMovie = moviesArr.find((movie) => movie.imdbID === imdbId);
+      if (!targetMovie) {
+        console.log("Could not find target movie in moviesArr");
+        return;
+      }
+      watchlistArr.push(targetMovie);
+      localStorage.setItem("watchlist", JSON.stringify(watchlistArr));
+    }
+  });
+} 
 
 async function fetchFilmDetails(key, film) {
   try {
@@ -139,9 +140,7 @@ async function renderFilmDetails(id) {
       <span>${data.imdbRating}</span>
       </div>
       <div id="${data.imdbID}">
-      <i class="fa-solid fa-circle-plus icon" data-addimdbid="${
-        data.imdbID}"></i>
-        <span class="inner-icon">${await displaySearchResults(data.imdbID)}</span>
+      ${await displaySearchResults(data.imdbID)}
         </div>
     </div>
     </section>
