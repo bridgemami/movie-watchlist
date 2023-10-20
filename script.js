@@ -66,7 +66,8 @@ function addFilmWatchlist() {
 
         watchlistEl.classList.remove("fa-solid", "fa-circle-plus");
         watchlistEl.innerHTML = "<span>Added to Watchlist</span>";
-        const moviesArr = getFromLocalStorage("movies")[0];
+        const moviesArr = getFromLocalStorage("movies");
+        if (moviesArr && moviesArr.length > 0) {
         const targetMovie = moviesArr.find((movie) => movie.imdbID === imdbId);
         if (!targetMovie) {
           console.log("Could not find target movie in moviesArr");
@@ -74,7 +75,7 @@ function addFilmWatchlist() {
         }
         watchlistArr.push(targetMovie);
         localStorage.setItem("watchlist", JSON.stringify(watchlistArr));
-      }
+      }}
     });
 }
 
