@@ -133,6 +133,10 @@ font-weight: bold;
     cursor: pointer;
 }
 
+.inner-icon {
+    cursor: auto;
+}
+
 
 .watchlist > a, .watchlist > a:visited, .empty-list-container >a, .empty-list-container >a:visited{
     color:#0E0E0E;

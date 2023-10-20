@@ -76,7 +76,7 @@ async function findingFilmInformation(arr) {
           </div>
           <div id="${data.imdbID}">
           <i class="fa-solid fa-circle-minus icon" data-removeimdbid="${data.imdbID}"></i>
-          <span>Remove Watchlist</span>
+          <span>Remove</span>
           </div>
         </div>
         </section>
